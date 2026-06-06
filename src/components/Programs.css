@@ -1,0 +1,171 @@
+.programs-section {
+  background-color: #ffffff;
+  padding: 100px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.programs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.programs-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.programs-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0A0F2C;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
+}
+
+.programs-title-underline {
+  width: 60px;
+  height: 4px;
+  background: #2563EB;
+  border-radius: 2px;
+  margin: 0 auto 20px auto;
+}
+
+.programs-subtitle {
+  font-size: 1.1rem;
+  color: #64748B;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.program-card {
+  background: #ffffff;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(10, 15, 44, 0.1);
+}
+
+.program-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.program-icon span {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.program-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0A0F2C;
+  margin: 0 0 4px 0;
+}
+
+.program-card-subtitle {
+  font-size: 0.875rem;
+  color: #64748B;
+  margin: 0 0 14px 0;
+}
+
+.program-duration {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 10px 0 18px 0;
+}
+
+.program-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.program-topic-tag {
+  background: #F1F5F9;
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.program-enroll-btn {
+  margin-top: auto;
+  background: #2563EB;
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.program-enroll-btn:hover {
+  background: #1D4ED8;
+  transform: scale(1.03);
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 1024px) {
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .programs-title {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 640px) {
+  .programs-section {
+    padding: 60px 16px;
+  }
+
+  .programs-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .programs-title {
+    font-size: 1.75rem;
+  }
+
+  .programs-subtitle {
+    font-size: 1rem;
+  }
+
+  .program-card {
+    padding: 28px 22px;
+  }
+}
