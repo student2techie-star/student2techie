@@ -86,7 +86,7 @@ function Programs() {
                 ))}
               </div>
 
-              <button className="program-enroll-btn">Enroll Now</button>
+              <a href='#contact' className="program-enroll-btn">Enroll Now</a>
             </div>
           ))}
         </div>

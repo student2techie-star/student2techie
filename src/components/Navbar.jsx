@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Navbar.css';
-
+import logo from "../assets/logo.jpg"
 const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'Programs', href: '#programs' },
@@ -34,7 +34,7 @@ export default function Navbar() {
     <nav id="navbar" className={`navbar${scrolled ? ' scrolled' : ''}`}>
       <div className="navbar-container">
         <a href="#home" className="navbar-logo" onClick={handleLinkClick}>
-          <div className="navbar-logo-icon">S2T</div>
+          <div className="navbar-logo-icon"><img className="logo" src={logo} alt="" /></div>
           <div className="navbar-logo-text">
             <span>Student2Techie</span> Academy
           </div>

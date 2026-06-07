@@ -34,8 +34,12 @@
   cursor: pointer;
 }
 
+.logo{
+  border-radius: 20px;
+}
+
 .navbar-logo-icon {
-  background: var(--accent);
+  
   color: var(--white);
   font-weight: 900;
   font-size: 1.25rem;

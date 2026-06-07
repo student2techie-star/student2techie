@@ -2,10 +2,10 @@ import { useState, useEffect, useRef } from 'react';
 import './Hero.css';
 
 const stats = [
-  { target: 500, suffix: '+', label: 'Students Trained' },
-  { target: 50, suffix: '+', label: 'Partner Companies' },
+  { target: 300, suffix: '+', label: 'Students Trained' },
+  { target: 10, suffix: '+', label: 'Partner Companies' },
   { target: 100, suffix: '%', label: 'Certificate Rate' },
-  { target: 4.9, suffix: '★', label: 'Student Rating', isDecimal: true },
+  { target: 4.5, suffix: '★', label: 'Student Rating', isDecimal: true },
 ];
 
 function AnimatedCounter({ target, suffix, isDecimal }) {
@@ -108,7 +108,7 @@ export default function Hero() {
       <div className="hero-content">
         <div className="hero-badge">
           <span className="hero-badge-dot" />
-          Applications Open for 2025
+          Applications Open for 2026
         </div>
 
         <h1 className="hero-title">
