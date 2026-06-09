@@ -66,7 +66,7 @@ export default function CertificateVerifier() {
               id="regno"
               className={`field-input ${touched && !regNo.trim() ? "field-error" : ""}`}
               type="text"
-              placeholder="e.g. U242011"
+              placeholder="e.g. XX29080XX"
               value={regNo}
               onChange={(e) => { setRegNo(e.target.value); setNotFound(false); }}
               onKeyDown={(e) => e.key === "Enter" && handleVerify()}
