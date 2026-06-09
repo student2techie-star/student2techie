@@ -70,6 +70,7 @@ export default function CertificateVerifier() {
               value={regNo}
               onChange={(e) => { setRegNo(e.target.value); setNotFound(false); }}
               onKeyDown={(e) => e.key === "Enter" && handleVerify()}
+
             />
             {touched && !regNo.trim() && (
               <span className="error-msg">Register number is required</span>
@@ -108,3 +109,4 @@ export default function CertificateVerifier() {
     </div>
   );
 }
+//nothing
