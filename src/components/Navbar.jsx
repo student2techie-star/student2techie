@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './Navbar.css';
-import logo from "../assets/logo.jpg"
+import logo from "../assets/logo.jpg";
+
 const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'Programs', href: '#programs' },
@@ -33,8 +34,11 @@ export default function Navbar() {
   return (
     <nav id="navbar" className={`navbar${scrolled ? ' scrolled' : ''}`}>
       <div className="navbar-container">
+
         <a href="#home" className="navbar-logo" onClick={handleLinkClick}>
-          <div className="navbar-logo-icon"><img className="logo" src={logo} alt="" /></div>
+          <div className="navbar-logo-icon">
+            <img className="logo" src={logo} alt="Student2Techie logo" width={36} height={36} />
+          </div>
           <div className="navbar-logo-text">
             <span>Student2Techie</span> Academy
           </div>
@@ -44,6 +48,7 @@ export default function Navbar() {
           className={`navbar-toggle${menuOpen ? ' active' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation menu"
+          style={{ zIndex: 1000, position: 'relative' }}
         >
           <span></span>
           <span></span>
@@ -52,7 +57,7 @@ export default function Navbar() {
 
         <div className={`navbar-links${menuOpen ? ' open' : ''}`}>
           {navLinks.map((link) => (
-            <a
+            <a              
               key={link.href}
               href={link.href}
               className="navbar-link"
@@ -70,6 +75,7 @@ export default function Navbar() {
           className={`navbar-overlay${menuOpen ? ' active' : ''}`}
           onClick={() => setMenuOpen(false)}
         />
+
       </div>
     </nav>
   );

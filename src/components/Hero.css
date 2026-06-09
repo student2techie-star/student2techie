@@ -80,6 +80,8 @@
   z-index: 2;
   text-align: center;
   max-width: 800px;
+  padding-top: 80px;
+  margin-top: 50px;
 }
 
 .hero-badge {
@@ -87,7 +89,7 @@
   align-items: center;
   gap: 8px;
   padding: 8px 20px;
-  background: rgba(37, 99, 235, 0.15);
+  background: rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(37, 99, 235, 0.3);
   border-radius: 50px;
   color: var(--accent);
@@ -117,6 +119,17 @@
 
 .hero-title {
   font-size: 4rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.8s ease 0.2s forwards;
+  opacity: 0;
+}
+
+.hero-title1 {
+  font-size: 2rem;
   font-weight: 900;
   color: var(--white);
   line-height: 1.1;
@@ -199,19 +212,19 @@
   font-weight: 500;
 }
 
-/* Responsive */
+/* Replace your existing @media (max-width: 768px) hero block with this */
 @media (max-width: 768px) {
   .hero {
-    padding: 100px 16px 60px;
+    padding: 140px 16px 60px; /* ✅ increased top padding to clear navbar */
     min-height: auto;
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .hero-subtitle {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
   .hero-stats {
@@ -225,25 +238,64 @@
 
   .hero-buttons {
     margin-bottom: 48px;
+    flex-direction: column;  /* ✅ stack buttons */
+    width: 100%;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .hero-float-icon svg {
     width: 32px;
     height: 32px;
   }
+
+  /* ✅ hide floating icons on mobile so they don't overlap text */
+  .hero-floating-icons {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 130px 16px 48px;
+  }
+
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.85rem;
+    letter-spacing: -0.02em;
   }
 
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
+    .hero-title1 {
+    font-size: 1.50rem;
+    letter-spacing: -0.02em;
   }
 
-  .hero-buttons .btn {
-    width: 100%;
+  .hero-badge {
+    font-size: 0.78rem;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+  }
+
+  .hero-stat-number {
+    font-size: 1.75rem;
+  }
+
+  .hero-stat-label {
+    font-size: 0.78rem;
+  }
+
+  .hero-stat {
+    padding: 16px 10px;
   }
 }

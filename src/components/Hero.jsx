@@ -111,7 +111,7 @@ export default function Hero() {
           Applications Open for 2026
         </div>
 
-        <h1 className="hero-title">
+        <h1 className="hero-title1">
           Transform Your Student Life
           <br />
           Into a <span className="hero-title-accent">Tech Career</span>
