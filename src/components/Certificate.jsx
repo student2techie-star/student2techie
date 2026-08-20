@@ -22,6 +22,9 @@ function Certificate() {
             src={CertificateImg}
             alt="Internship Certificate"
             className="certificate-image"
+            width={1600}
+            height={1131}
+            loading="lazy"
           />
         </div>
       </div>

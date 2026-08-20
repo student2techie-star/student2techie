@@ -12,26 +12,34 @@
     <title>Student2Techie Academy — From Campus to Career</title>
     <link rel="canonical" href="https://student2techie.in/" />
 
-    <!-- Google tag (gtag.js) Lazy Loaded -->
+    <!-- Google tag (gtag.js) — deferred until after page load -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-J57B0XNRDJ');
 
-      const loadGtag = () => {
+      function loadGtag() {
         if (window.gtagLoaded) return;
         window.gtagLoaded = true;
-        const script = document.createElement('script');
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-J57B0XNRDJ';
-        script.async = true;
-        document.head.appendChild(script);
-      };
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J57B0XNRDJ';
+        s.async = true;
+        document.head.appendChild(s);
+      }
 
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadGtag, { timeout: 2000 });
+      function scheduleGtag() {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadGtag);
+        } else {
+          setTimeout(loadGtag, 0);
+        }
+      }
+
+      if (document.readyState === 'complete') {
+        scheduleGtag();
       } else {
-        setTimeout(loadGtag, 2000);
+        window.addEventListener('load', scheduleGtag);
       }
     </script>
   </head>
