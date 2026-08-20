@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import SEO from "./SEO";
 import { verifyPageKeywords } from "../Data/seoKeywords";
+import CertificateVerifier from "./Certificateverifier";
 import "./CertificateVerifier.css";
 
 export default function Verify() {
@@ -24,19 +25,7 @@ export default function Verify() {
           keywords={verifyPageKeywords}
         />
         <main className="verify-main">
-          <div className="card result-card result-invalid" style={{ textAlign: "center" }}>
-            <svg viewBox="0 0 64 64" fill="none" className="shield-icon">
-              <path d="M32 4L8 14v18c0 14 10.5 24.5 24 28 13.5-3.5 24-14 24-28V14L32 4z"
-                fill="var(--red-fill)" stroke="var(--red)" strokeWidth="2" />
-              <line x1="24" y1="24" x2="40" y2="40" stroke="var(--red)" strokeWidth="3.5" strokeLinecap="round" />
-              <line x1="40" y1="24" x2="24" y2="40" stroke="var(--red)" strokeWidth="3.5" strokeLinecap="round" />
-            </svg>
-            <div className="result-title invalid-title">No Data Found</div>
-            <div className="result-sub">Please verify from the home page.</div>
-            <button className="btn-reset" onClick={() => navigate("/")} style={{ marginTop: "20px" }}>
-              ← Go Back
-            </button>
-          </div>
+          <CertificateVerifier />
         </main>
       </div>
     );
