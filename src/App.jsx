@@ -6,7 +6,6 @@ import './index.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import SEO from './components/SEO';
-import logo from './assets/logo.jpg';
 
 // Lazy components (Below the fold)
 const Features = lazy(() => import('./components/Features'));
@@ -20,31 +19,12 @@ const Verify = lazy(() => import('./components/Verify'));
 const CertificateVerifier = lazy(() => import('./components/Certificateverifier'));
 
 function HomePage() {
-  const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Student2Techie Academy",
-      "url": "https://student2techie.in/",
-      "logo": `https://student2techie.in${logo}`,
-      "email": "student2techie@gmail.com",
-      "telephone": "+91 93602 93815"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Student2Techie Academy",
-      "url": "https://student2techie.in/"
-    }
-  ];
-
   return (
     <>
       <SEO 
         title="Tech Internships & Training for Students | Student2Techie"
         description="Student2Techie offers tech internships and online training for students in web development, MERN, Python, UI/UX and more. Build real projects and career-ready skills."
         url="/"
-        schemaMarkup={schema}
       />
       <Hero />
       <Suspense fallback={null}>
