@@ -1,18 +1,22 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import './index.css';
+
+// Eager components (Critical for LCP/FCP)
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Features from './components/Features';
-import HowItWorks from './components/HowItWorks';
-import Programs from './components/Programs';
-import Testimonials from './components/Testimonials';
-import Certificate from './components/Certificate';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import Verify from './components/Verify';
-import CertificateVerifier from './components/Certificateverifier';
 import SEO from './components/SEO';
+
+// Lazy components (Below the fold)
+const Features = lazy(() => import('./components/Features'));
+const HowItWorks = lazy(() => import('./components/HowItWorks'));
+const Programs = lazy(() => import('./components/Programs'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const Certificate = lazy(() => import('./components/Certificate'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
+const Verify = lazy(() => import('./components/Verify'));
+const CertificateVerifier = lazy(() => import('./components/Certificateverifier'));
 
 function HomePage() {
   const schema = {
@@ -32,13 +36,15 @@ function HomePage() {
         schemaMarkup={schema}
       />
       <Hero />
-      <Features />
-      <HowItWorks />
-      <Programs />
-      <Testimonials />
-      <Certificate />
-      <CertificateVerifier/>
-      <Contact />
+      <Suspense fallback={null}>
+        <Features />
+        <HowItWorks />
+        <Programs />
+        <Testimonials />
+        <Certificate />
+        <CertificateVerifier/>
+        <Contact />
+      </Suspense>
     </>
   );
 }
@@ -78,11 +84,15 @@ function AppContent() {
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/verify" element={<Verify />} />
-      </Routes>
-      <Footer />
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/verify" element={<Verify />} />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </>
   );
 }
