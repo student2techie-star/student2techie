@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import SEO from "./SEO";
+import { verifyPageKeywords } from "../Data/seoKeywords";
 import "./CertificateVerifier.css";
 
 export default function Verify() {
@@ -15,6 +17,12 @@ export default function Verify() {
   if (!student) {
     return (
       <div className="verify-page">
+        <SEO 
+          title="Verify Certificate | Student2Techie Academy"
+          description="Verify the authenticity of certificates issued by Student2Techie Academy."
+          url="/verify"
+          keywords={verifyPageKeywords}
+        />
         <main className="verify-main">
           <div className="card result-card result-invalid" style={{ textAlign: "center" }}>
             <svg viewBox="0 0 64 64" fill="none" className="shield-icon">
@@ -36,6 +44,12 @@ export default function Verify() {
 
   return (
     <div className="verify-page">
+      <SEO 
+        title="Verify Certificate | Student2Techie Academy"
+        description="Verify the authenticity of certificates issued by Student2Techie Academy."
+        url="/verify"
+        keywords={verifyPageKeywords}
+      />
       <div className="verify-hero">
         <h2 className="verify-heading">Certificate Verification</h2>
         <p className="verify-subheading">Student2Techie Academy — Official Record</p>

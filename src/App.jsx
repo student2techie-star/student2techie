@@ -12,10 +12,25 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Verify from './components/Verify';
 import CertificateVerifier from './components/Certificateverifier';
+import SEO from './components/SEO';
 
 function HomePage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Student2Techie Academy",
+    "url": "https://student2techie.in",
+    "description": "Real Internships, Online Classes, Offer Letters & Certificates. Transform your student life into a tech career with hands-on training and placement support."
+  };
+
   return (
     <>
+      <SEO 
+        title="Student2Techie Academy | Tech Internships & Online Classes"
+        description="Real Internships, Online Classes, Offer Letters & Certificates. Transform your student life into a tech career with hands-on training and placement support."
+        url="/"
+        schemaMarkup={schema}
+      />
       <Hero />
       <Features />
       <HowItWorks />

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://student2techie.in/sitemap.xml
