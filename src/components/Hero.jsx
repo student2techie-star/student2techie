@@ -112,15 +112,13 @@ export default function Hero() {
         </div>
 
         <h1 className="hero-title1">
-          Transform Your Student Life
+          Tech Internships and Training
           <br />
-          Into a <span className="hero-title-accent">Tech Career</span>
+          <span className="hero-title-accent">Programs for Students</span>
         </h1>
 
         <p className="hero-subtitle">
-          Real Internships. Online Classes. Offer Letters. Certificates.
-          <br />
-          Join hundreds of students who launched their tech careers with us.
+          Real internships, online classes, hands-on projects, offer letters and certificates to help students build job-ready tech skills.
         </p>
 
         <div className="hero-buttons">

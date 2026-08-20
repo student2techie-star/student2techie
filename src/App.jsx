@@ -24,14 +24,14 @@ function HomePage() {
     "@type": "EducationalOrganization",
     "name": "Student2Techie Academy",
     "url": "https://student2techie.in",
-    "description": "Real Internships, Online Classes, Offer Letters & Certificates. Transform your student life into a tech career with hands-on training and placement support."
+    "description": "Student2Techie offers tech internships and online training for students in web development, MERN, Python, UI/UX and more. Build real projects and career-ready skills."
   };
 
   return (
     <>
       <SEO 
-        title="Student2Techie Academy | Tech Internships & Online Classes"
-        description="Real Internships, Online Classes, Offer Letters & Certificates. Transform your student life into a tech career with hands-on training and placement support."
+        title="Tech Internships & Training for Students | Student2Techie"
+        description="Student2Techie offers tech internships and online training for students in web development, MERN, Python, UI/UX and more. Build real projects and career-ready skills."
         url="/"
         schemaMarkup={schema}
       />
