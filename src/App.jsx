@@ -54,7 +54,6 @@ function AppContent() {
   const location = useLocation();
 
   useEffect(() => {
-    // ✅ Re-runs every time the route changes
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -66,18 +65,33 @@ function AppContent() {
       { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
-    // ✅ Small delay lets the new page's DOM render first
-    const timer = setTimeout(() => {
+    const observedSet = new WeakSet();
+
+    const observeElements = () => {
       const elements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
       elements.forEach((el) => {
-        el.classList.remove('visible'); // reset so they can re-animate
-        observer.observe(el);
+        if (!observedSet.has(el)) {
+          el.classList.remove('visible'); // reset so they can re-animate
+          observer.observe(el);
+          observedSet.add(el);
+        }
       });
-    }, 100);
+    };
+
+    observeElements();
+
+    const mutationObserver = new MutationObserver(() => {
+      observeElements();
+    });
+
+    mutationObserver.observe(document.getElementById('root') || document.body, {
+      childList: true,
+      subtree: true,
+    });
 
     return () => {
-      clearTimeout(timer);
       observer.disconnect();
+      mutationObserver.disconnect();
     };
   }, [location.pathname]); // ✅ re-runs when route changes
 
